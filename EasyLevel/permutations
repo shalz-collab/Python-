@@ -1,0 +1,15 @@
+from itertools import permutations
+
+def find_combinations(digits):
+    return [''.join(map(str, p)) for p in permutations(digits)]
+
+# Input: 3 digits
+digits = list(map(int, input("Enter 3 digits (space-separated): ").split()))
+
+if len(digits) == 3:
+    combinations = find_combinations(digits)
+    print("Possible Combinations:")
+    for combo in combinations:
+        print(combo)
+else:
+    print("Error: Please enter exactly 3 digits.")
