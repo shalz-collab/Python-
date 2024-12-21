@@ -1,0 +1,22 @@
+def sort_names(names, order):
+    if order.lower() == 'ascending':
+        names.sort()
+    elif order.lower() == 'descending':
+        names.sort(reverse=True)
+    else:
+        print("Invalid order choice. Please choose either 'ascending' or 'descending'.")
+        return
+    return names
+
+def main():
+    names = input("Enter a list of names, separated by commas: ").split(',')
+    names = [name.strip() for name in names]  # Removing any extra spaces around names
+    order = input("Enter sorting order (ascending/descending): ")
+    
+    sorted_names = sort_names(names, order)
+    
+    if sorted_names:
+        print("Sorted names:", sorted_names)
+
+if __name__ == "__main__":
+    main()
